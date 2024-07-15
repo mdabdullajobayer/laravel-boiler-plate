@@ -56,11 +56,9 @@
                     @endforelse
                 </tbody>
             </table>
-            <div class="dataTables_paginate paging_simple_numbers">
-                {{ $roles->links() }}
+            <div class="d-flex justify-content-center">
+                {{ $roles->links('pagination::bootstrap-4') }}
             </div>
-
-
 
         </div>
     </div>

@@ -31,6 +31,9 @@ Route::group(['prefix' => 'admin'], function () {
 Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
 
     Route::get('dashboard', [HomeController::class, 'index'])->name('home');
+    Route::get('profile', function () {
+        return view('backend.profile.profile');
+    })->name('profile');
 
     Route::resources([
         'roles' => RoleController::class,

@@ -1,6 +1,14 @@
 @extends('backend.layouts.master')
 
 @section('content')
+    <div class="row page-titles mx-0">
+        <div class="col-sm-6 p-md-0">
+            <div class="welcome-text">
+                <h4>Hi, welcome back! {{ Auth::user()->name }}</h4>
+                <p class="mb-0"></p>
+            </div>
+        </div>
+    </div>
     <div class="col-md-12">
         <div class="card">
             <div class="card-header">{{ __('Dashboard') }}</div>
@@ -14,7 +22,6 @@
 
                 {{ __('You are logged in!') }}
 
-                <p>This is your application dashboard.</p>
                 @canany(['create-role', 'edit-role', 'delete-role'])
                     <a class="btn btn-primary" href="{{ route('roles.index') }}">
                         <i class="bi bi-person-fill-gear"></i> Manage Roles</a>
